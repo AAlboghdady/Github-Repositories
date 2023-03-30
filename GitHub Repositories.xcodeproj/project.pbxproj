@@ -23,6 +23,9 @@
 		154BEAE629D6471700177861 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAE529D6471700177861 /* Enums.swift */; };
 		154BEAEA29D6490500177861 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAE829D6490500177861 /* Repository.swift */; };
 		154BEAEB29D6490500177861 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAE929D6490500177861 /* Owner.swift */; };
+		154BEAED29D64A7300177861 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAEC29D64A7300177861 /* Reachability.swift */; };
+		154BEAEF29D64AA600177861 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAEE29D64AA600177861 /* Service.swift */; };
+		154BEAF129D64AE000177861 /* RepositoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAF029D64AE000177861 /* RepositoriesRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		154BEAE529D6471700177861 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		154BEAE829D6490500177861 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		154BEAE929D6490500177861 /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		154BEAEC29D64A7300177861 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		154BEAEE29D64AA600177861 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		154BEAF029D64AE000177861 /* RepositoriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,9 @@
 		154BEAC629D63D6D00177861 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				154BEAEC29D64A7300177861 /* Reachability.swift */,
+				154BEAEE29D64AA600177861 /* Service.swift */,
+				154BEAF029D64AE000177861 /* RepositoriesRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -384,6 +393,9 @@
 				154BEADC29D6400800177861 /* RepositoriesVM.swift in Sources */,
 				154BEAE629D6471700177861 /* Enums.swift in Sources */,
 				154BEA9829D63D3800177861 /* SceneDelegate.swift in Sources */,
+				154BEAEF29D64AA600177861 /* Service.swift in Sources */,
+				154BEAF129D64AE000177861 /* RepositoriesRequest.swift in Sources */,
+				154BEAED29D64A7300177861 /* Reachability.swift in Sources */,
 				154BEAE429D646E200177861 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
