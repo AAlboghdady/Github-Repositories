@@ -19,6 +19,10 @@
 		154BEADC29D6400800177861 /* RepositoriesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEADB29D6400800177861 /* RepositoriesVM.swift */; };
 		154BEAE029D641C400177861 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEADE29D641C400177861 /* RepositoryCell.swift */; };
 		154BEAE129D641C400177861 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 154BEADF29D641C400177861 /* RepositoryCell.xib */; };
+		154BEAE429D646E200177861 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAE329D646E200177861 /* Constants.swift */; };
+		154BEAE629D6471700177861 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAE529D6471700177861 /* Enums.swift */; };
+		154BEAEA29D6490500177861 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAE829D6490500177861 /* Repository.swift */; };
+		154BEAEB29D6490500177861 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAE929D6490500177861 /* Owner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		154BEADB29D6400800177861 /* RepositoriesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesVM.swift; sourceTree = "<group>"; };
 		154BEADE29D641C400177861 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		154BEADF29D641C400177861 /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
+		154BEAE329D646E200177861 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		154BEAE529D6471700177861 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		154BEAE829D6490500177861 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		154BEAE929D6490500177861 /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +160,8 @@
 		154BEAC729D63D8200177861 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				154BEAE329D646E200177861 /* Constants.swift */,
+				154BEAE529D6471700177861 /* Enums.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -185,6 +195,7 @@
 		154BEACB29D63DB700177861 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				154BEAE729D6490500177861 /* Repository */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +233,15 @@
 				154BEAD829D63FFB00177861 /* RepositoriesVC.xib */,
 			);
 			path = RepositoriesVC;
+			sourceTree = "<group>";
+		};
+		154BEAE729D6490500177861 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				154BEAE829D6490500177861 /* Repository.swift */,
+				154BEAE929D6490500177861 /* Owner.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,8 +379,12 @@
 				154BEAE029D641C400177861 /* RepositoryCell.swift in Sources */,
 				154BEAD929D63FFB00177861 /* RepositoriesVC.swift in Sources */,
 				154BEA9629D63D3800177861 /* AppDelegate.swift in Sources */,
+				154BEAEA29D6490500177861 /* Repository.swift in Sources */,
+				154BEAEB29D6490500177861 /* Owner.swift in Sources */,
 				154BEADC29D6400800177861 /* RepositoriesVM.swift in Sources */,
+				154BEAE629D6471700177861 /* Enums.swift in Sources */,
 				154BEA9829D63D3800177861 /* SceneDelegate.swift in Sources */,
+				154BEAE429D646E200177861 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
