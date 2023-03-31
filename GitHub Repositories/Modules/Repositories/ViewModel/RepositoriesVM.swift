@@ -8,21 +8,42 @@
 import Foundation
 import Combine
 
-class RepositoriesVM{
+class RepositoriesVM {
     
     @Published var repositories: [Repository] = []
     @Published var error: String = ""
-
+    private var cancellables = Set<AnyCancellable>()
+    
+    private var repositoriesRequest = RepositoriesRequest()
+    
     func getRepositories() {
-        let request = URLRequest(url: URL(string: Constants.repositoriesURL)!)
-        let repositoriesRequest = RepositoriesRequest(networkService: NetworkService(), urlRequest: request)
-        repositoriesRequest.getRepositories { [weak self] response in
-            switch response {
-            case .failure(let error):
-                self?.error = error.localizedDescription
-            case .success(let repositories):
-                self?.repositories = repositories
-            }
+        repositoriesRequest.get(url: URL(string: Constants.repositoriesURL)!, model: [Repository].self)
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [weak self] repositories in
+                    self?.repositories = repositories
+                }
+            )
+            .store(in: &cancellables)
+    }
+    
+    func searchInRepositories(text: String) {
+        for cancellable in cancellables {
+            cancellable.cancel()
+            print("canceled")
         }
+        cancellables = []
+        let url = Constants.repositoriesSearchURL + "?" +
+        "q=" + text +
+        "&page=1" +
+        "&per_page=100"
+        repositoriesRequest.get(url: URL(string: url)!, model: RepositoriesSearch.self)
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { [weak self] repositories in
+                    self?.repositories = repositories.items ?? []
+                }
+            )
+            .store(in: &cancellables)
     }
 }

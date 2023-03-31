@@ -24,11 +24,13 @@ class RepositoriesVC: UIViewController {
     }
     
     func setupViews() {
+        setupSearchTextField()
         setupTableView()
+        bindRepositoriesToTableView()
     }
     
     func setupSearchTextField() {
-//        searchTextField.delegate = self
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     func setupTableView() {
@@ -36,13 +38,15 @@ class RepositoriesVC: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: Cells.RepositoryCell.rawValue, bundle: nil), forCellReuseIdentifier: Cells.RepositoryCell.rawValue)
-        
+    }
+    
+    func bindRepositoriesToTableView() {
         viewModel.$repositories
-                    .receive(on: DispatchQueue.main)
-                    .sink { [weak self] _ in
-                        self?.tableView.reloadData()
-                    }
-                    .store(in: &cancellables)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -61,5 +65,24 @@ extension RepositoriesVC: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cells.RepositoryCell.rawValue, for: indexPath) as! RepositoryCell
         cell.configure(repository: viewModel.repositories[indexPath.row])
         return cell
+    }
+}
+
+extension RepositoriesVC {
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(searchRepositories), object: nil)
+        perform(#selector(searchRepositories), with: nil, afterDelay: 0.5)
+    }
+    
+    @objc func searchRepositories() {
+        if searchTextField.text!.isEmpty {
+            // if the search text is empty then it will load all repositories
+            viewModel.getRepositories()
+        } else if searchTextField.text!.count >= 2 {
+            // add validation to search after the second Character is types
+            let text = searchTextField.text!.filter { $0 != Character(" ") }
+            print(text)
+            viewModel.searchInRepositories(text: text)
+        }
     }
 }

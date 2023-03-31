@@ -16,7 +16,8 @@ class RepositoryCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        ownerImageView.layer.cornerRadius = 8
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,6 +30,7 @@ class RepositoryCell: UITableViewCell {
         // set Repository data
         repositoryNameLabel.text = repository.name
         ownerNameLabel.text = repository.owner?.login
-//        repositoryNameLabel.text = repository.date
+        creationDateLabel.text = repository.created_at
+        ownerImageView.loadImage(from: repository.owner?.avatar_url ?? "")
     }
 }

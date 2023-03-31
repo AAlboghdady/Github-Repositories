@@ -6,15 +6,9 @@
 //
 
 import Foundation
+import Combine
 
-class RepositoriesRequest: Request {
-    var networkService: Service
-    var urlRequest: URLRequest
-    
-    init(networkService: Service, urlRequest: URLRequest) {
-        self.urlRequest = urlRequest
-        self.networkService = networkService
-    }
+class RepositoriesRequest: Service {
     
     func checkConnection() -> Bool {
         switch Reachability().connectionStatus() {
@@ -25,26 +19,13 @@ class RepositoriesRequest: Request {
         }
     }
     
-    func getRepositories(completion: @escaping (Result<[Repository], Error>) -> Void) {
+    func get<T>(url: URL, model: T.Type) -> AnyPublisher<T, Error> where T : Codable {
         if !checkConnection() {
-            completion(.failure(NSError(domain: "", code: 100)))
+            return Fail(error: NSError(domain: "No internet connection", code: -100, userInfo: nil)).eraseToAnyPublisher()
         }
-        DispatchQueue.global().async {
-            self.networkService.get(request: self) { response in
-                switch response {
-                case .failure(let error):
-                    completion(.failure(error))
-                case .success(let data):
-                    // parse the json
-                    let jsonDecoder = JSONDecoder()
-                    do {
-                        let repositories = try jsonDecoder.decode([Repository].self, from: data)
-                        completion(.success(repositories))
-                    } catch {
-                        completion(.failure(error))
-                    }
-                }
-            }
-        }
+        return URLSession.shared.dataTaskPublisher(for: url)
+                    .map { $0.data }
+                    .decode(type: model.self, decoder: JSONDecoder())
+                    .eraseToAnyPublisher()
     }
 }

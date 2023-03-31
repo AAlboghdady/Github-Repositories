@@ -60,4 +60,6 @@ struct Repository : Codable {
 	let labels_url : String?
 	let releases_url : String?
 	let deployments_url : String?
+    let created_at : String?
+    let updated_at : String?
 }
