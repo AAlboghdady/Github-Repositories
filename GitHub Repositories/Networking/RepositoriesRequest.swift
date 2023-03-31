@@ -26,7 +26,7 @@ class RepositoriesRequest: Request {
     }
     
     func getRepositories(completion: @escaping (Result<[Repository], Error>) -> Void) {
-        if checkConnection() {
+        if !checkConnection() {
             completion(.failure(NSError(domain: "", code: 100)))
         }
         DispatchQueue.global().async {

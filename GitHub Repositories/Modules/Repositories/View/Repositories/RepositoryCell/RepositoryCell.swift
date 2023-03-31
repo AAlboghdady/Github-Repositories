@@ -25,4 +25,10 @@ class RepositoryCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(repository: Repository) {
+        // set Repository data
+        repositoryNameLabel.text = repository.name
+        ownerNameLabel.text = repository.owner?.login
+//        repositoryNameLabel.text = repository.date
+    }
 }
