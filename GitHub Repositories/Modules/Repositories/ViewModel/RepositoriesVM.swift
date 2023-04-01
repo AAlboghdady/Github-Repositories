@@ -11,16 +11,19 @@ import Combine
 class RepositoriesVM {
     
     @Published var repositories: [Repository] = []
+    @Published var isLoading: Bool = false
     @Published var error: String = ""
     private var cancellables = Set<AnyCancellable>()
     
     private var repositoriesRequest = RepositoriesRequest()
     
     func getRepositories() {
+        isLoading = true
         repositoriesRequest.get(url: URL(string: Constants.repositoriesURL)!, model: [Repository].self)
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue: { [weak self] repositories in
+                    self?.isLoading = false
                     self?.repositories = repositories
                 }
             )
@@ -37,10 +40,12 @@ class RepositoriesVM {
         "q=" + text +
         "&page=1" +
         "&per_page=100"
+        isLoading = true
         repositoriesRequest.get(url: URL(string: url)!, model: RepositoriesSearch.self)
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue: { [weak self] repositories in
+                    self?.isLoading = false
                     self?.repositories = repositories.items ?? []
                 }
             )

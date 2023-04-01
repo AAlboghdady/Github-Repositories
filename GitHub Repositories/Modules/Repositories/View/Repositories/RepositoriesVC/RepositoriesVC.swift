@@ -12,7 +12,8 @@ class RepositoriesVC: UIViewController {
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     var viewModel: RepositoriesVM!
     private var cancellables = Set<AnyCancellable>()
     
@@ -27,6 +28,7 @@ class RepositoriesVC: UIViewController {
         setupSearchTextField()
         setupTableView()
         bindRepositoriesToTableView()
+        bindLoading()
     }
     
     func setupSearchTextField() {
@@ -47,6 +49,25 @@ class RepositoriesVC: UIViewController {
                 self?.tableView.reloadData()
             }
             .store(in: &cancellables)
+    }
+    
+    func bindLoading() {
+        viewModel.$isLoading
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isLoading in
+                self?.showLoading(isLoading)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func showLoading(_ isLoading: Bool) {
+        if isLoading {
+            activityIndicator.startAnimating()
+            activityIndicator.isHidden = false
+        } else {
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+        }
     }
 }
 

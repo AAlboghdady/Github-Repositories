@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RepositoriesVC" customModule="GitHub_Repositories" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="Vm3-oj-FIP" id="HuM-7U-8Q2"/>
                 <outlet property="searchTextField" destination="baJ-Je-GeA" id="7bw-GW-Yc7"/>
                 <outlet property="tableView" destination="tnF-I9-l28" id="a0T-Hb-HKU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -20,26 +21,31 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tnF-I9-l28">
-                    <rect key="frame" x="0.0" y="101" width="393" height="717"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="baJ-Je-GeA">
                     <rect key="frame" x="8" y="67" width="377" height="34"/>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tnF-I9-l28">
+                    <rect key="frame" x="0.0" y="101" width="393" height="717"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Vm3-oj-FIP">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Vm3-oj-FIP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3Kz-Mv-eBs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tnF-I9-l28" secondAttribute="trailing" id="8QR-Xe-aBP"/>
                 <constraint firstItem="tnF-I9-l28" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HkI-UZ-pb5"/>
                 <constraint firstItem="baJ-Je-GeA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="J5W-Dt-uGR"/>
                 <constraint firstItem="baJ-Je-GeA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KhW-dQ-OkS"/>
                 <constraint firstItem="tnF-I9-l28" firstAttribute="top" secondItem="baJ-Je-GeA" secondAttribute="bottom" id="bO5-SQ-NLT"/>
                 <constraint firstItem="baJ-Je-GeA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="qU7-Cl-B2u"/>
+                <constraint firstItem="Vm3-oj-FIP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="tWu-J5-SXM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tnF-I9-l28" secondAttribute="bottom" id="yWI-l8-iSw"/>
                 <constraint firstItem="tnF-I9-l28" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zhM-fA-r1e"/>
             </constraints>
