@@ -26,22 +26,11 @@ class RepositoryCell: UITableViewCell {
         repositoryNameLabel.text = repository.name
         ownerNameLabel.text = repository.owner?.login
         if let created_at = repository.created_at {
-            setDate(dateString: created_at)
+            creationDateLabel.text = repository.created_at?.getCustomDate()
             creationDateLabel.isHidden = false
         } else {
             // hide creationDateLabel if no date returned
-            creationDateLabel.isHidden = true
-        }
-    }
-    
-    func setDate(dateString: String) {
-        let date = dateString.toDate()
-        if Date().months(from: date) > 6 {
-            // Thursday, Oct 22, 2020
-            creationDateLabel.text = date.dateString
-        } else {
-            // 4 month ago
-            creationDateLabel.text = date.timeAgoDisplay
+            creationDateLabel.isHidden = repository.created_at?.isEmpty ?? true
         }
     }
 }

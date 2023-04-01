@@ -14,4 +14,15 @@ extension String {
         let dateFromString : Date = dateFormatter.date(from: self)!
         return dateFromString
     }
+    
+    func getCustomDate() -> String {
+        let date = self.toDate()
+        if Date().months(from: date) > 6 {
+            // Thursday, Oct 22, 2020
+            return date.dateString
+        } else {
+            // 4 month ago
+            return  date.timeAgoDisplay
+        }
+    }
 }

@@ -45,15 +45,25 @@ final class RepositoryCellTests: XCTestCase {
     }
     
     func testSetDateMoreThanSixMonths() {
-        let dateString = "2021-04-01T12:32:53Z"
-        cell.setDate(dateString: dateString)
+        var repository = Repository()
+        repository.name = "Repository name"
+        var owner = Owner()
+        owner.login = "user name"
+        repository.owner = owner
+        repository.created_at = "2021-04-01T12:32:53Z"
+        cell.configure(repository: repository)
         
         XCTAssertEqual(cell.creationDateLabel.text, "Thursday, Apr 1, 2021")
     }
     
     func testSetDateLessThanSixMonths() {
-        let dateString = "2022-12-31T23:32:53Z"
-        cell.setDate(dateString: dateString)
+        var repository = Repository()
+        repository.name = "Repository name"
+        var owner = Owner()
+        owner.login = "user name"
+        repository.owner = owner
+        repository.created_at = "2022-12-31T23:32:53Z"
+        cell.configure(repository: repository)
         
         XCTAssertEqual(cell.creationDateLabel.text, "3 months ago")
     }
