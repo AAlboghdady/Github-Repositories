@@ -36,6 +36,7 @@ class RepositoriesVM {
             print("canceled")
         }
         cancellables = []
+        repositories = []
         let url = Constants.repositoriesSearchURL + "?" +
         "q=" + text +
         "&page=1" +
