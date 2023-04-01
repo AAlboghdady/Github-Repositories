@@ -14,22 +14,24 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 import Foundation
 
 struct Owner : Codable {
-	let login : String?
-	let id : Int?
-	let node_id : String?
-	let avatar_url : String?
-	let gravatar_id : String?
-	let url : String?
-	let html_url : String?
-	let followers_url : String?
-	let following_url : String?
-	let gists_url : String?
-	let starred_url : String?
-	let subscriptions_url : String?
-	let organizations_url : String?
-	let repos_url : String?
-	let events_url : String?
-	let received_events_url : String?
-	let type : String?
-	let site_admin : Bool?
+	var login : String?
+	var id : Int?
+	var node_id : String?
+	var avatar_url : String?
+	var gravatar_id : String?
+	var url : String?
+	var html_url : String?
+	var followers_url : String?
+	var following_url : String?
+	var gists_url : String?
+	var starred_url : String?
+	var subscriptions_url : String?
+	var organizations_url : String?
+	var repos_url : String?
+	var events_url : String?
+	var received_events_url : String?
+	var type : String?
+	var site_admin : Bool?
+    
+    init() {}
 }

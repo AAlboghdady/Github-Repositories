@@ -14,7 +14,9 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 import Foundation
 
 struct RepositoriesSearch : Codable {
-	let total_count : Int?
-	let incomplete_results : Bool?
-	let items : [Repository]?
+	var total_count : Int?
+    var incomplete_results : Bool?
+    var items : [Repository]?
+    
+    init() {}
 }

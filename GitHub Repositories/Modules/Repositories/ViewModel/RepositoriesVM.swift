@@ -15,7 +15,11 @@ class RepositoriesVM {
     @Published var error: String = ""
     private var cancellables = Set<AnyCancellable>()
     
-    private var repositoriesRequest = RepositoriesRequest()
+    private var repositoriesRequest: Service!
+    
+    init(repositoriesRequest: Service) {
+        self.repositoriesRequest = repositoriesRequest
+    }
     
     func getRepositories() {
         isLoading = true
@@ -28,6 +32,18 @@ class RepositoriesVM {
                 }
             )
             .store(in: &cancellables)
+    }
+    
+    func validateSearch(text: String) {
+        if text.isEmpty {
+            // if the search text is empty then it will load all repositories
+            getRepositories()
+        } else if text.count >= 2 {
+            // add validation to search after the second Character is types
+            let text = text.filter { $0 != Character(" ") }
+            print(text)
+            searchInRepositories(text: text)
+        }
     }
     
     func searchInRepositories(text: String) {

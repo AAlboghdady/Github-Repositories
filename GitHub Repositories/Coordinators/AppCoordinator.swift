@@ -25,7 +25,7 @@ class AppCoordinator: Coordinator {
         // Instantiate RepositoriesVC
         let repositoriesVC = RepositoriesVC()
         // Instantiate ViewModel
-        let repositoriesVM = RepositoriesVM.init()
+        let repositoriesVM = RepositoriesVM(repositoriesRequest: RepositoriesRequest())
         // Set the ViewModel to ViewController
         repositoriesVC.viewModel = repositoriesVM
         repositoriesVC.title = "Repositories"
