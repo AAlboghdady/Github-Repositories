@@ -19,12 +19,6 @@ class RepositoryCell: UITableViewCell {
         
         ownerImageView.layer.cornerRadius = 8
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func configure(repository: Repository) {
         // set Repository data
@@ -33,8 +27,10 @@ class RepositoryCell: UITableViewCell {
         ownerNameLabel.text = repository.owner?.login
         if let created_at = repository.created_at {
             setDate(dateString: created_at)
+            creationDateLabel.isHidden = false
         } else {
             // hide creationDateLabel if no date returned
+            creationDateLabel.isHidden = true
         }
     }
     
