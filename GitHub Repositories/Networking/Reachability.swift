@@ -36,7 +36,34 @@ enum ReachabilityStatus: CustomStringConvertible {
     }
 }
 
-public class Reachability {
+protocol ReachabilityProtocol {
+    func connectionStatus() -> ReachabilityStatus
+    func monitorReachabilityChanges()
+}
+
+extension ReachabilityProtocol {
+    func monitorReachabilityChanges() {
+        let host = "google.com"
+        var context = SCNetworkReachabilityContext(version: 0, info: nil, retain: nil, release: nil, copyDescription: nil)
+        let reachability = SCNetworkReachabilityCreateWithName(nil, host)!
+        
+        SCNetworkReachabilitySetCallback(reachability, { (_, flags, _) in
+            let status = ReachabilityStatus(reachabilityFlags: flags)
+            
+            NotificationCenter.default.post(name: Notification.Name(rawValue: ReachabilityStatusChangedNotification),
+                                            object: nil,
+                                            userInfo: ["Status": status.description])
+            
+        }, &context)
+        
+        SCNetworkReachabilityScheduleWithRunLoop(reachability, CFRunLoopGetMain(), RunLoop.Mode.common as CFString)
+    }
+}
+
+class Reachability: ReachabilityProtocol {
+    
+    static var shared: ReachabilityProtocol = Reachability()
+    
     func connectionStatus() -> ReachabilityStatus {
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
@@ -56,23 +83,6 @@ public class Reachability {
         }
         
         return ReachabilityStatus(reachabilityFlags: flags)
-    }
-    
-    func monitorReachabilityChanges() {
-        let host = "google.com"
-        var context = SCNetworkReachabilityContext(version: 0, info: nil, retain: nil, release: nil, copyDescription: nil)
-        let reachability = SCNetworkReachabilityCreateWithName(nil, host)!
-        
-        SCNetworkReachabilitySetCallback(reachability, { (_, flags, _) in
-            let status = ReachabilityStatus(reachabilityFlags: flags)
-            
-            NotificationCenter.default.post(name: Notification.Name(rawValue: ReachabilityStatusChangedNotification),
-                                            object: nil,
-                                            userInfo: ["Status": status.description])
-            
-        }, &context)
-        
-        SCNetworkReachabilityScheduleWithRunLoop(reachability, CFRunLoopGetMain(), RunLoop.Mode.common as CFString)
     }
 }
 
