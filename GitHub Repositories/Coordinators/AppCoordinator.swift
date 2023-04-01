@@ -35,18 +35,12 @@ class AppCoordinator: Coordinator {
         Constants.window?.makeKeyAndVisible()
     }
     
-//    func goToTeams(league: Competition) {
-//        // Instantiate TeamsViewController
-//        let teamsVC = UIStoryboard.instantiate(.teams, .teams) as! TeamsViewController
-//        // Set the id to the ViewController
-//        teamsVC.league = league
-//        // Instantiate ViewModel
-//        let teamsViewModel = TeamsViewModel.init()
-//        // Set the id to the ViewModel
-//        teamsViewModel.competitionId = league.id!
-//        // Set the ViewModel to ViewController
-//        teamsVC.viewModel = teamsViewModel
-//        // Push it.
-//        navigationController.pushViewController(teamsVC, animated: true)
-//    }
+    func goToRepositoryDetails(repository: Repository) {
+        // Instantiate RepositoryDetailsVC
+        let repositoryDetailsVC = RepositoryDetailsVC()
+        // Set the id to the ViewController
+        repositoryDetailsVC.repository = repository
+        // Push it.
+        navigationController.pushViewController(repositoryDetailsVC, animated: true)
+    }
 }

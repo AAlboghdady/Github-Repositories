@@ -17,7 +17,7 @@ class RepositoryCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        ownerImageView.layer.cornerRadius = 8
+        ownerImageView.round(8)
     }
     
     func configure(repository: Repository) {
@@ -25,7 +25,7 @@ class RepositoryCell: UITableViewCell {
         ownerImageView.loadImage(from: repository.owner?.avatar_url ?? "")
         repositoryNameLabel.text = repository.name
         ownerNameLabel.text = repository.owner?.login
-        if let created_at = repository.created_at {
+        if repository.created_at != nil {
             creationDateLabel.text = repository.created_at?.getCustomDate()
             creationDateLabel.isHidden = false
         } else {

@@ -39,7 +39,8 @@ struct Repository : Codable {
 	var git_refs_url : String?
 	var trees_url : String?
 	var statuses_url : String?
-	var languages_url : String?
+    var languages_url : String?
+	var language : String?
 	var stargazers_url : String?
 	var contributors_url : String?
 	var subscribers_url : String?
@@ -62,6 +63,10 @@ struct Repository : Codable {
 	var deployments_url : String?
     var created_at : String?
     var updated_at : String?
+    var open_issues : Int?
+    var watchers : Int?
+    var score : Int?
+    var license : License?
     
     init() {}
 }

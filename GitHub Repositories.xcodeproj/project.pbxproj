@@ -13,6 +13,10 @@
 		1541623729D8DC6E00DA8398 /* RepositoriesVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1541623629D8DC6E00DA8398 /* RepositoriesVCTests.swift */; };
 		1541623A29D8DFFD00DA8398 /* MockReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1541623929D8DFFD00DA8398 /* MockReachability.swift */; };
 		1541623D29D8E0F500DA8398 /* ReachabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1541623C29D8E0F500DA8398 /* ReachabilityTests.swift */; };
+		1541624129D8E86600DA8398 /* RepositoryDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1541623F29D8E86600DA8398 /* RepositoryDetailsVC.swift */; };
+		1541624229D8E86600DA8398 /* RepositoryDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1541624029D8E86600DA8398 /* RepositoryDetailsVC.xib */; };
+		1541624429D8ED4900DA8398 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1541624329D8ED4900DA8398 /* License.swift */; };
+		1541624629D8F17000DA8398 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1541624529D8F17000DA8398 /* UIViewExtension.swift */; };
 		154BEA9629D63D3800177861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEA9529D63D3800177861 /* AppDelegate.swift */; };
 		154BEA9829D63D3800177861 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEA9729D63D3800177861 /* SceneDelegate.swift */; };
 		154BEA9F29D63D3900177861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154BEA9E29D63D3900177861 /* Assets.xcassets */; };
@@ -63,6 +67,10 @@
 		1541623629D8DC6E00DA8398 /* RepositoriesVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesVCTests.swift; sourceTree = "<group>"; };
 		1541623929D8DFFD00DA8398 /* MockReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReachability.swift; sourceTree = "<group>"; };
 		1541623C29D8E0F500DA8398 /* ReachabilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityTests.swift; sourceTree = "<group>"; };
+		1541623F29D8E86600DA8398 /* RepositoryDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsVC.swift; sourceTree = "<group>"; };
+		1541624029D8E86600DA8398 /* RepositoryDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryDetailsVC.xib; sourceTree = "<group>"; };
+		1541624329D8ED4900DA8398 /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		1541624529D8F17000DA8398 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		154BEA9229D63D3800177861 /* GitHub Repositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub Repositories.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		154BEA9529D63D3800177861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		154BEA9729D63D3800177861 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +151,15 @@
 				1541623C29D8E0F500DA8398 /* ReachabilityTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		1541623E29D8E84000DA8398 /* RepositoryDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1541623F29D8E86600DA8398 /* RepositoryDetailsVC.swift */,
+				1541624029D8E86600DA8398 /* RepositoryDetailsVC.xib */,
+			);
+			path = RepositoryDetails;
 			sourceTree = "<group>";
 		};
 		154BEA8929D63D3800177861 = {
@@ -250,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				154BEAD629D63FFB00177861 /* Repositories */,
+				1541623E29D8E84000DA8398 /* RepositoryDetails */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,6 +321,7 @@
 				154BEAFD29D6601800177861 /* RepositoriesSearch.swift */,
 				154BEAE829D6490500177861 /* Repository.swift */,
 				154BEAE929D6490500177861 /* Owner.swift */,
+				1541624329D8ED4900DA8398 /* License.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -322,6 +341,7 @@
 				154BEAFB29D65C3700177861 /* UIImageViewExtension.swift */,
 				154BEAFF29D8BE1400177861 /* DateEnxtension.swift */,
 				154BEB0129D8C04E00177861 /* StringExntension.swift */,
+				1541624529D8F17000DA8398 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -433,6 +453,7 @@
 				154BEAA229D63D3900177861 /* LaunchScreen.storyboard in Resources */,
 				154BEA9F29D63D3900177861 /* Assets.xcassets in Resources */,
 				154BEADA29D63FFB00177861 /* RepositoriesVC.xib in Resources */,
+				1541624229D8E86600DA8398 /* RepositoryDetailsVC.xib in Resources */,
 				154BEAE129D641C400177861 /* RepositoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,8 +481,10 @@
 			files = (
 				154BEAE029D641C400177861 /* RepositoryCell.swift in Sources */,
 				154BEB0229D8C04E00177861 /* StringExntension.swift in Sources */,
+				1541624129D8E86600DA8398 /* RepositoryDetailsVC.swift in Sources */,
 				154BEAFE29D6601800177861 /* RepositoriesSearch.swift in Sources */,
 				154BEAD929D63FFB00177861 /* RepositoriesVC.swift in Sources */,
+				1541624429D8ED4900DA8398 /* License.swift in Sources */,
 				154BEAF329D655CE00177861 /* AppCoordinator.swift in Sources */,
 				154BEA9629D63D3800177861 /* AppDelegate.swift in Sources */,
 				154BEAEA29D6490500177861 /* Repository.swift in Sources */,
@@ -474,6 +497,7 @@
 				154BEA9829D63D3800177861 /* SceneDelegate.swift in Sources */,
 				154BEAEF29D64AA600177861 /* Service.swift in Sources */,
 				154BEAF129D64AE000177861 /* RepositoriesRequest.swift in Sources */,
+				1541624629D8F17000DA8398 /* UIViewExtension.swift in Sources */,
 				154BEAED29D64A7300177861 /* Reachability.swift in Sources */,
 				154BEAE429D646E200177861 /* Constants.swift in Sources */,
 			);
