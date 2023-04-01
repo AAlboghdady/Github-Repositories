@@ -30,6 +30,8 @@
 		154BEAF629D6561E00177861 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAF529D6561E00177861 /* Coordinator.swift */; };
 		154BEAFC29D65C3700177861 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAFB29D65C3700177861 /* UIImageViewExtension.swift */; };
 		154BEAFE29D6601800177861 /* RepositoriesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAFD29D6601800177861 /* RepositoriesSearch.swift */; };
+		154BEB0029D8BE1400177861 /* DateEnxtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEAFF29D8BE1400177861 /* DateEnxtension.swift */; };
+		154BEB0229D8C04E00177861 /* StringExntension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154BEB0129D8C04E00177861 /* StringExntension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		154BEAF529D6561E00177861 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		154BEAFB29D65C3700177861 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		154BEAFD29D6601800177861 /* RepositoriesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesSearch.swift; sourceTree = "<group>"; };
+		154BEAFF29D8BE1400177861 /* DateEnxtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEnxtension.swift; sourceTree = "<group>"; };
+		154BEB0129D8C04E00177861 /* StringExntension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExntension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				154BEAFB29D65C3700177861 /* UIImageViewExtension.swift */,
+				154BEAFF29D8BE1400177861 /* DateEnxtension.swift */,
+				154BEB0129D8C04E00177861 /* StringExntension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				154BEAE029D641C400177861 /* RepositoryCell.swift in Sources */,
+				154BEB0229D8C04E00177861 /* StringExntension.swift in Sources */,
 				154BEAFE29D6601800177861 /* RepositoriesSearch.swift in Sources */,
 				154BEAD929D63FFB00177861 /* RepositoriesVC.swift in Sources */,
 				154BEAF329D655CE00177861 /* AppCoordinator.swift in Sources */,
@@ -422,6 +429,7 @@
 				154BEAFC29D65C3700177861 /* UIImageViewExtension.swift in Sources */,
 				154BEAEB29D6490500177861 /* Owner.swift in Sources */,
 				154BEAF629D6561E00177861 /* Coordinator.swift in Sources */,
+				154BEB0029D8BE1400177861 /* DateEnxtension.swift in Sources */,
 				154BEADC29D6400800177861 /* RepositoriesVM.swift in Sources */,
 				154BEAE629D6471700177861 /* Enums.swift in Sources */,
 				154BEA9829D63D3800177861 /* SceneDelegate.swift in Sources */,

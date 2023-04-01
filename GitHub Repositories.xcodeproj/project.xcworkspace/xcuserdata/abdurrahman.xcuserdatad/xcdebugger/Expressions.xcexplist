@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "RepositoryCell.setDate(dateString:):RepositoryCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "date.months(from: Date())">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in RepositoriesVM.getRepositories():RepositoriesVM.swift">
       </ContextState>
       <ContextState
