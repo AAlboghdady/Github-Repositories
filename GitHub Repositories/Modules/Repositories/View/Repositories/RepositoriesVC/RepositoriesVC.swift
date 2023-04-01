@@ -96,14 +96,6 @@ extension RepositoriesVC {
     }
     
     @objc func searchRepositories() {
-        if searchTextField.text!.isEmpty {
-            // if the search text is empty then it will load all repositories
-            viewModel.getRepositories()
-        } else if searchTextField.text!.count >= 2 {
-            // add validation to search after the second Character is types
-            let text = searchTextField.text!.filter { $0 != Character(" ") }
-            print(text)
-            viewModel.searchInRepositories(text: text)
-        }
+        viewModel.validateSearch(text: searchTextField.text!)
     }
 }
