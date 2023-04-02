@@ -46,15 +46,4 @@ class RepositoryDetailsVC: UIViewController {
         creationDateLabel.text = repository?.created_at?.getCustomDate()
         licenceLabel.text = repository?.license?.name
     }
-    
-    func setDate(dateString: String) {
-        let date = dateString.toDate()
-        if Date().months(from: date) > 6 {
-            // Thursday, Oct 22, 2020
-            creationDateLabel.text = date.dateString
-        } else {
-            // 4 month ago
-            creationDateLabel.text = date.timeAgoDisplay
-        }
-    }
 }
