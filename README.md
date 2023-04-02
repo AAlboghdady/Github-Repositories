@@ -29,14 +29,6 @@ You don't need to install Anything.
 - iOS 13.0+
 - Swift 5
 
-## Installation
-
-Install my-project with npm
-
-```bash
-  pod install
-```
-
 
 ## Authors
 
